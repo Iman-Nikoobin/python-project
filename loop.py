@@ -1,29 +1,37 @@
+
 while True:
+    print("\n===== Rectangle Project =====")
 
-    print("1. Add numbers")
-    print("2. Display numbers")
-    print("3. Exit")
+    # گرفتن ابعاد مستطیل
+    width = int(input("Enter rectangle width: "))
+    height = int(input("Enter rectangle height: "))
 
-    choice = int(input("Choose: "))
-
-    if choice == 1:
-
-        a = int(input("First number: "))
-        b = int(input("Second number: "))
-
-        print("Sum:", a + b)
-
-    elif choice == 2:
-
-        n = int(input("Enter a number: "))
-
-        for i in range(1, n + 1):
-            print(i)
-
-    elif choice == 3:
-
-        print("Program finished")
-        break
-
+    # بررسی ابعاد با شرط
+    if width <= 0 or height <= 0:
+        print("Error: Width and height must be positive!")
     else:
-        print("Invalid choice")
+        print("\nYour Rectangle:\n")
+
+        # رسم مستطیل با حلقه for
+        for i in range(height):
+            for j in range(width):
+                print("*", end=" ")
+            print()
+
+        # گزارش پروژه
+        print("\n===== Project Report =====")
+        print("Width:", width)
+        print("Height:", height)
+        print("Area:", width * height)
+        print("Perimeter:", 2 * (width + height))
+
+    # تصمیم برای ادامه یا پایان
+    choice = input("\nDo you want to continue? (y/n): ")
+
+    if choice.lower() == "n":
+        print("Program finished!")
+        break
+    elif choice.lower() == "y":
+        continue
+    else:
+        print("Invalid choice! Program will continue.")
